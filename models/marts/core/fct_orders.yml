@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: payment_id
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
