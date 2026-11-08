@@ -1,4 +1,5 @@
-with
+with 
+    all_payments as ( select * from {{ source('stripe', 'payment') }}),
     payments as (
         select 
             id as payment_id,
@@ -9,7 +10,7 @@ with
             created,
             _batched_at
 
-        from raw.stripe.payment
+        from all_payments
     )
 select *
 from payments
